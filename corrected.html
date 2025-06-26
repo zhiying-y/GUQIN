@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Guqin Music</title>
+        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="music.css"/>
+    </head>
+
+    <body>
+        <div id="prehome" class="page">
+            <h1>Guqin Music Therapy</h1>
+            <h2>Nourish the body with the Guqin, calm the mind with sound</h2>
+            <img src="images/guqin1.jpg" alt="GUQIN" class="guqin">
+            <button class="btn" onclick="goToHome()">Start your journey</button>
+        </div>
+
+        <div id="main"class="page" style="display: none;">
+            <div class="layout">
+                <div class="sidebar">
+                    <h2>Welcome to the world of Guqin</h2>
+                    <button onclick="showSection('home')">HOME</button>
+                    <button onclick="showSection('effects')">EFFECTS</button>
+                    <button onclick="showSection('scene')">SCENE</button>
+                    <button onclick="showSection('guqin')">GUQIN</button>
+                    <button onclick="goBack()">BACK</button>
+                </div>
+
+                <div class="main-content" id="content">
+                    <div id="home" style="position: relative;">
+                        <video id="mainVideo" class="video-layer show" autoplay muted loop playsinline>
+                            <source src="videos/main1.mp4" type="video/mp4">
+                        </video>
+
+                        <video id="tempVideo" class="video-layer" muted playsinline>
+                            <source id="tempSource" src="" type="video/mp4">
+                        </video>
+
+                        <div class="middle-image-container">
+                            <div class="main-img">
+                                <img src="images/wuxing.jpg" class="middle-image" alt="decorative graphic">
+                            </div>
+                            <div class="emotion-area">
+                                <img src="images/heart2.jpg" id="btn-happy" onclick="playEmotionWithText('videos/happyness.mp4', '❤️ Heart (Fire)<br>【Emotion】: Joy  【Tone】: Zhi（徵）<br>The Heart is the emperor of all organs in Traditional Chinese Medicine, governing consciousness and spirit (shen). While joy nourishes the heart, excessive excitement can lead to restlessness and insomnia.The 【Zhi】tone, warm and uplifting, harmonizes with the Heart and is ideal for calming the mind and supporting restful sleep.<br>【Healing Focus】: Calms the spirit, stabilizes joy, improves sleep.')" alt="HAPPY">
+                                <img src="images/lung2.jpg" id="btn-sad"    onclick="playEmotionWithText('videos/sad.mp4', '🍂 Lungs (Metal)<br>【Emotion】: Sadness  【Tone】: Shang（商）<br>The Lungs regulate breathing and are closely connected to grief and sorrow. Lingering sadness can disrupt breathing and weaken vitality. The 【Shang】 tone has a clear, autumn-like quality, perfect for processing grief and regulating the breath.<br>【Healing Focus】: Helps process grief, regulates breath, restores emotional openness.')"  alt="SAD">
+                                <img src="images/kidney2.jpg" id="btn-scared" onclick="playEmotionWithText('videos/scared.mp4', '🌊 Kidneys (Water)<br>【Emotion】: Fear  【Tone】: Yu（羽）<br>The Kidneys store essence and govern willpower and inner strength. Persistent fear and insecurity can deplete this energy source. The 【Yu】 tone is deep and tranquil, like flowing water, helping to calm fear and replenish vitality.<br>【Healing Focus】: Anchors the mind, nourishes energy, dispels fear.')"    alt="AFRAID">
+                                <img src="images/spleen2.jpg" id="btn-think"  onclick="playEmotionWithText('videos/overthingking.mp4','🟡 Spleen (Earth)<br>【Emotion】: Overthinking  【Tone】: Gong（宫）<br>The Spleen is responsible for digestion and focused thought. Excessive thinking and worry can weaken its function, causing fatigue, brain fog, and digestive issues. The 【Gong】 tone is steady and grounded, promoting clarity, mental focus, and emotional stability.<br>【Healing Focus】: Supports clarity, stabilizes thought, strengthens attention.')" alt="THOUGHT">
+                                <img src="images/liver2.jpg" id="btn-angry" onclick="playEmotionWithText('videos/angry.mp4','🌿 Liver (Wood)<br>【Emotion】: Anger  【Tone】: Jue（角）<br>The Liver governs the smooth flow of qi and emotions in Traditional Chinese Medicine. Suppressed anger or stagnation may lead to irritability, tension, or physical discomfort. The 【Jue】 tone, expansive and rising, resonates with the Liver and helps restore emotional flow and harmony.<br>【Healing Focus】: Soothes liver qi, relieves tension, restores emotional balance.')"     alt="ANGRY">
+                            </div>
+                        </div>
+                        <div id="emotion-info" class="emotion-info">
+                        </div>
+                    </div>
+
+                    <div id="effects" style="display:none">
+                        <div class="music-options">
+                            <img src="images/pingshaluoyan.jpg" onclick="selectHealingMusic('musics/pingshaluoyan(xin).m4a', '❤️ Ping Sha Luo Yan (Wild Geese Descending on the Sandbank)<br>Effect: Calms the mind, soothes restlessness<br>Emotional Healing: While joy nourishes the heart, excessive excitement may disturb the spirit. This piece flows gently like distant geese in flight, helping the mind return to stillness.<br>Recommended for: Evening quiet time, pre-sleep listening, emotional overstimulation<br>Best time to listen: 🌙 9:00–11:00 PM <br>(Heart governs sleep and spirit at night)')" alt="HEART">
+                            <img src="images/yangguansandie.jpg" onclick="selectHealingMusic('musics/yangguansandie(fei).m4a', '🍂 Yang Guan San Die (Three Variations on the Yang Pass)<br>Effect: Processes grief and sadness, opens the lungs<br>Emotional Healing: Parting and sorrow often reside in the lungs. With its poetic structure and soft tone, this piece gently helps emotions release and settle.<br>Recommended for: Solitude, remembrance, rainy afternoons<br>Best time to listen: 🌥 3:00–5:00 PM <br>(Lung meridian time — inward reflection)')" alt="LUNG">
+                            <img src="images/meihuasannong.jpg" onclick="selectHealingMusic('musics/meihuasannong(sheng).m4a', '🌊 Mei Hua San Nong (Three Variations on Plum Blossom)<br>Effect: Calms fear, stabilizes the kidneys<br>Emotional Healing: Persistent fear or insecurity weakens the kidneys. This serene and noble piece, like plum blossoms blooming in winter, restores courage and inner strength.<br>Recommended for: Nighttime rest, meditation, anxious moments<br>Best time to listen: 🌌 11:00 PM–1:00 AM <br>(Kidneys regenerate during deep rest)')" alt="KIDNEY">
+                            <img src="images/liushui.jpg" onclick="selectHealingMusic('musics/liushui(pi).m4a', '🟡 Liu Shui (Flowing Water)<br>Effect: Enhances focus and clarity<br>Emotional Healing: Overthinking weakens the Spleen and clouds the mind. Like a flowing stream, this melody clears mental fog and supports concentration.<br>Recommended for: Studying, writing, mental fatigue<br>Best time to listen: 🌞 9:00–11:00 AM <br>(Spleen supports thought and clarity)')" alt="APLEEN">
+                            <img src="images/guanglingsan.jpg" onclick="selectHealingMusic('musics/guanglinsan.m4a', '🌿 Guang Ling San (Guangling Melody)<br>Effect: Releases inner tension, soothes the Liver<br>Emotional Healing: Suppressed anger and stress disturb the Livers flow. This powerful and expressive piece channels that energy, restoring balance and clarity.<br>Recommended for: Mental pressure, frustration, early morning revitalization<br>Best time to listen: 🌅 5:00–7:00 AM <br>(Liver meridian is most active)')" alt="LIVER">
+                        </div>
+                        <div id="music-description" class="music-description">🎶 Please select the music.</div>
+                        <audio id="healingMusic" loop></audio>
+                        <div id="musicControl" onclick="toggleHealingMusic()" style="display: none;" class="music-icon">▶️</div>
+                    </div>
+
+                    <video id="bgVideo" autoplay muted loop playsinline class="background-video"></video>
+
+                    <div id="scene" class="scene-area">
+                        <h2>Choose a scene</h2>
+                        <div class="scene-options">
+                            <img src="images/chitang.jpg" onclick="selectScene('videos/chitang.mp4', 'musics/chitang.m4a')" title="Pond">
+                            <img src="images/xuesi.jpg" onclick="selectScene('videos/xuesi.mp4', 'musics/snow.m4a')" title="Snowy night">
+                            <img src="images/zhulin.jpg" onclick="selectScene('videos/zhulin.mp4', 'musics/zhulin.m4a')" title="bamboo forest">
+                        </div>
+                        <div class="music-controls">
+                            <button onclick="toggleAudio()"class="play-btn">⏯️ PLAY / PAUSE</button>
+                            <button onclick="cycleBgMode()"class="switch-btn">🎨 Choose Background</button>
+                        </div>
+
+                        <audio id="guqinAudio" loop src="audio/guqin.mp3"></audio>
+                        <audio id="sceneAudio" loop></audio>
+                        <!--Volume Control Components -->
+                        <div id="volumeControl" class="volume-control">
+                            <button id="muteBtn" onclick="toggleMute()" class="volume-btn">🔊</button>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="50" class="volume-slider" oninput="changeVolume(this.value)">
+                            <span id="volumeValue" class="volume-value">50%</span>
+                        </div>
+                    </div>
+
+                    <div id="guqin" style="display:none">🌿 Guqin module display
+                        <video id="bg-video" autoplay loop muted playsinline style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1;"><source src="bg.mp4" type="video/mp4"></video>
+                        <div class="keyboard" id="keyboard">
+                            <div class="keyboard-row">
+                                <div class="key" data-letter="Q" data-audio="gong2"><span class="dot dot-top"></span>
+                                    <span class="label">宫</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>1</span>
+                                </div>
+                                <div class="key" data-letter="W" data-audio="shang2"><span class="dot dot-top"></span><span class="label">商</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>2</span>
+                                </div>
+                                <div class="key" data-letter="E" data-audio="jue2"><span class="dot dot-top"></span><span class="label">角</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>3</span>
+                                </div>
+                                <div class="key" data-letter="R" data-audio="qingjue2"><span class="dot dot-top"></span><span class="label">清角</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>4</span>
+                                </div>
+                                <div class="key" data-letter="T" data-audio="zhi2"><span class="dot dot-top"></span><span class="label">徵</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>5</span>
+                                </div>
+                                <div class="key" data-letter="Y" data-audio="yu2"><span class="dot dot-top"></span><span class="label">羽</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>6</span>
+                                </div>
+                                <div class="key" data-letter="U" data-audio="biangong2"><span class="dot dot-top"></span><span class="label">变宫</span>
+                                    <span class="letter letter-top"><span class="letter-top-dot"></span>7</span>
+                                </div>
+                            </div>
+                            <div class="keyboard-row">
+                                <div class="key" data-letter="A" data-audio="1"><span class="label">宫</span><span class="letter">1</span></div>
+                                <div class="key" data-letter="S" data-audio="2"><span class="label">商</span><span class="letter">2</span></div>
+                                <div class="key" data-letter="D" data-audio="3"><span class="label">角</span><span class="letter">3</span></div>
+                                <div class="key" data-letter="F" data-audio="4"><span class="label">清角</span><span class="letter">4</span></div>
+                                <div class="key" data-letter="G" data-audio="5"><span class="label">徵</span><span class="letter">5</span></div>
+                                <div class="key" data-letter="H" data-audio="6"><span class="label">羽</span><span class="letter">6</span></div>
+                                <div class="key" data-letter="J" data-audio="7"><span class="label">变宫</span><span class="letter">7</span></div>
+                            </div>
+                            <div class="keyboard-row">
+                                <div class="key" data-letter="Z" data-audio="gong1">
+                                            <span class="dot dot-bottom"></span>
+                            
+                                    <span class="label">宫</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>1</span>
+                                </div>
+                                <div class="key" data-letter="X" data-audio="shang1">
+                                    <span class="label">商</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>2</span>
+                                    <span class="dot dot-bottom"></span>
+                                </div>
+                                <div class="key" data-letter="C" data-audio="jue1">
+                                    <span class="label">角</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>3</span>
+                                    <span class="dot dot-bottom"></span>
+                                </div>
+                                <div class="key" data-letter="V" data-audio="qingjue1">
+                                    <span class="label">清角</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>4</span>
+                                    <span class="dot dot-bottom"></span>
+                                </div>
+                                <div class="key" data-letter="B" data-audio="zhi1">
+                                    <span class="label">徵</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>5</span>
+                                    <span class="dot dot-bottom"></span>
+                                </div>
+                                <div class="key" data-letter="N" data-audio="yu1">
+                                    <span class="label">羽</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>6</span>
+                                    <span class="dot dot-bottom"></span>
+                                </div>
+                                <div class="key" data-letter="M" data-audio="biangong1">
+                                    <span class="label">变宫</span>
+                                    <span class="letter letter-bottom"><span class="letter-bottom-dot"></span>7</span>
+                                    <span class="dot dot-bottom"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="js/home.js"></script>
+    <script src="js/effect.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/guqin.js"></script>
+    </body>
+</html>
